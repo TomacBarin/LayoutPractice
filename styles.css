@@ -1,0 +1,106 @@
+:root {
+  /* Grayscale */
+  --able-gray-10: #141414;  
+  --able-gray-20: #2D2D2D;  
+  --able-gray-30: #3C3C3C;  
+  --able-gray-40: #484848;  
+  --able-gray-50: #646464;
+  --able-gray-75: #C0C0C0;
+  --able-gray-80: #CCCCCC;  
+
+  /* Text */
+  --able-text: #EEEEEE;     
+
+  /* Vibrant accents */
+  --able-hot-pink: #FF39D4;     
+  --able-fuchsia-tom: #FF2B6F;  
+  --able-peach: #FFA374;        
+  --able-coral: #FF94A6;        
+  --able-cyan: #19E9FF;         
+  --able-aqua: #5CFFE8;         
+  --able-orange: #F39420;       
+  --able-lemon: #FFF034;        
+  --able-pale-yellow: #F7F47C;  
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: var(--able-gray-30);
+    background-color: var(--able-gray-75);
+    font-family: Jost;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.card {
+    
+    background-color: var(--able-gray-20);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid var(--able-gray-20)
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.card h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 20px 20px 8px;
+  color: var(--able-text);
+}
+
+.card p {
+  flex-grow: 1;                      
+  margin: 0 20px 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--able-gray-75);
+}
+
+.card button {
+  margin: 0 20px 24px;
+  padding: 12px 24px;
+  background-color: var(--able-gray-75);
+  color: var(--able-gray-10);
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  align-self: flex-start;            
+}
+
+.card button:hover {
+  background-color: #00C4FF;         /* lite ljusare cyan */
+  transform: scale(1.05);
+}
+
+.card button:focus-visible {
+  outline: 3px solid var(--able-lemon);
+  outline-offset: 2px;
+}

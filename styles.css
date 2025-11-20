@@ -32,6 +32,14 @@ body {
     color: var(--able-gray-30);
     background-color: var(--able-gray-75);
     font-family: Jost;
+    --bg: var(--able-gray-75);
+    --card-bg: var(--able-gray-20);
+    --text: var(--able-gray-30);
+    --card-text: var(--able-text);
+    --button-bg: var(--able-gray-75);
+    --button-hover: #00C4FF;
+    background-color: var(--bg);
+    color: var(--text);
 }
 
 .container {
@@ -52,7 +60,8 @@ body {
     flex-direction: column;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    border: 1px solid var(--able-gray-20)
+    border: 1px solid var(--able-gray-20);
+    background-color: var(--card-bg);
 }
 
 .card:hover {
@@ -72,6 +81,7 @@ body {
   font-weight: 600;
   margin: 20px 20px 8px;
   color: var(--able-text);
+  color: var(--card-text);
 }
 
 .card p {
@@ -80,6 +90,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: var(--able-gray-75);
+  
 }
 
 .card button {
@@ -92,15 +103,75 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.15s ease;
-  align-self: flex-start;            
+  align-self: flex-start;    
+  background-color: var(--button-bg);
+  color: var(--able-gray-10);        
 }
 
 .card button:hover {
-  background-color: #00C4FF;         /* lite ljusare cyan */
+  background-color: #00C4FF;         
   transform: scale(1.05);
+  background-color: var(--button-hover);
 }
 
 .card button:focus-visible {
   outline: 3px solid var(--able-lemon);
   outline-offset: 2px;
+}
+
+
+body.dark {
+  --bg: var(--able-gray-10);
+  --card-bg: var(--able-gray-20);
+  --text: var(--able-text);
+  --card-text: var(--able-gray-75);
+  --button-bg: var(--able-cyan);
+  --button-hover: var(--able-aqua);
+}
+
+.theme-toggle-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+#theme-toggle {
+  background: var(--card-bg);
+  border: 2px solid var(--able-gray-50);
+  border-radius: 50px;
+  width: 60px;
+  height: 34px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 4px;
+}
+
+#theme-toggle .moon {
+  display: none;
+}
+
+body.dark #theme-toggle .sun {
+  display: none;
+}
+
+body.dark #theme-toggle .moon {
+  display: block;
+}
+
+#theme-toggle span {
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.3s;
+}
+
+#theme-toggle .sun {
+  left: 8px;
+}
+
+#theme-toggle .moon {
+  right: 8px;
 }
